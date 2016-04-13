@@ -74,7 +74,7 @@ function drawHeader($pageTitle,$user){
 										<li><a href="#">Edit Profile</a></li>
 										<li><a href="#">Account Settings</a></li>
 										<li class="divider"></li>
-										<li><a href="#">Logout</a></li>
+										<li><a href="logout.php">Logout</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -84,6 +84,39 @@ function drawHeader($pageTitle,$user){
 			</div><!-- /navbar -->
 	';
 }
+
+function drawAdminSidebar(){
+
+	echo '
+		<div class="sidebar">
+
+			<ul class="widget widget-menu unstyled">
+				<li class="active">
+					<a href="index.html">
+						<i class="menu-icon icon-paste"></i>
+						Upload marks
+					</a>
+				</li>
+				<li>
+					<a href="activity.html">
+						<i class="menu-icon icon-bullhorn"></i>
+						View course structure
+					</a>
+				</li>
+				<li>
+					<a href="message.html">
+						<i class="menu-icon icon-inbox"></i>
+						Edit details
+						<!-- <b class="label green pull-right">11</b> -->
+					</a>
+				</li>
+				
+			</ul><!--/.widget-nav-->
+
+		</div><!--/.sidebar-->
+	';
+}
+
 
 function drawStuSidebar(){
 

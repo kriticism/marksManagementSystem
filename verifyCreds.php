@@ -32,22 +32,20 @@
 			if(is_array($row)){
 				$_SESSION["user"]=$row['id'];
 				$_SESSION["password"]=$row['password'];
-				
+				$_SESSION['SESS_AUTH']=$row['auth_id'];
 				if($row['auth_id']=='admin') //  && $row['verified']==1
 				{
-					$_SESSION['SESS_AUTH']='admin';
+					
 					header('Location: admin-home.php');
 					// echo ('ADMIN!!!');
 				}
 				else if($row['auth_id']=='prof') //  && $row['verified']==1
 				{
-					$_SESSION['SESS_AUTH']='prof';
 					header('Location: prof-home.php');
 					// echo ('PROF!!!');
 				}
 				else if($row['auth_id']=='stu') // && $row['verified']==0
 				{
-					$_SESSION['SESS_AUTH']='stu';
 					header('Location: student-home.php');
 					// echo ('STUD!!!');
 				}
