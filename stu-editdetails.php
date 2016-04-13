@@ -65,7 +65,7 @@
 
 								 ?>
 							<div class="module-body">									
-									<form class="form-horizontal row-fluid" action= "update-stu-details.php">
+									<form class="form-horizontal row-fluid" action= "update-stu-details-action.php">
 										<div class="control-group">
 											<label class="control-label" for="basicinput">First Name</label>
 											<div class="controls">
@@ -193,7 +193,12 @@
 						 <div class="control-group">
 											<label class="control-label" for="basicinput">Permanent Address Line 2</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="addr line 2" class="span8">
+											<?php
+											echo '
+
+											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="addr line 2" class="span8">
+											';?>
+												
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
 											</div>
 										</div>
@@ -201,7 +206,11 @@
                                          <div class="control-group">
 											<label class="control-label" for="basicinput">City</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="City" class="span8">
+												<?php
+												echo '
+												<input type="text" id="basicinput"  value="'.$read_list['admn_no'].'" placeholder="City" class="span8">
+
+												';?>
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
 											</div>
 										</div>
@@ -209,7 +218,11 @@
                                          <div class="control-group">
 											<label class="control-label" for="basicinput">State</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="state" class="span8">
+											<?php
+											echo '
+											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="state" class="span8">
+											';?>
+												
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
 											</div>
 										</div>
@@ -217,30 +230,39 @@
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Degree</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="degree" class="span8" disabled>
+											<?php
+											echo '
+											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="degree" class="span8" disabled>
+											
+											';?>
+
+												
 											</div>
 										</div>
                                         
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Branch</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="branch" class="span8" disabled>
+											<?php
+											echo '
+											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="branch" class="span8" disabled>
+											';?>
+												
 											</div>
 										</div>
                                         
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Semester</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="current sem" class="span8" disabled>
+											<?php
+											echo '
+												<input type="text" id="basicinput" placeholder="current sem"  value="'.$read_list['admn_no'].'"  class="span8" disabled>
+											';?>
+
+
 											</div>
 										</div>
                                         
-                                        <div class="control-group">
-											<label class="control-label" for="basicinput">OGPA</label>
-											<div class="controls">
-												<input type="text" id="basicinput" placeholder="ogpa" class="span8" disabled>
-											</div>
-										</div>
                                         
                                         
                                          <div class="control-group">

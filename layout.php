@@ -137,7 +137,7 @@ function drawStuSidebar(){
 					</a>
 				</li>
 				<li>
-					<a href="message.html">
+					<a href="stu-editdetails.php">
 						<i class="menu-icon icon-inbox"></i>
 						Edit details
 						<!-- <b class="label green pull-right">11</b> -->

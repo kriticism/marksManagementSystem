@@ -2,12 +2,16 @@
 	include_once "dbConnect.php";
 	include_once "layout.php";
 	
+
+	require_once "Includes/SessionAuth.php";
+	require_once "Includes/SessionAuthStu.php";	
+	
 	drawHeader("maksPage", "KS");
 
 
 
 
-if($_SESSION['SESS_AUTH'] == 'stu'){
+// if($_SESSION['SESS_AUTH'] == 'stu'){
 	echo '<div class="wrapper">
 			<div class="container">
 				<div class="row">
@@ -44,9 +48,9 @@ if($_SESSION['SESS_AUTH'] == 'stu'){
 				</div>
 			</div><!--/.container-->
 		</div><!--/.wrapper-->';
-}else{
-	echo '<p>You not allowed</p>';
-}
+// }else{
+	// echo '<p>You not allowed</p>';
+// }
 
 		drawFooter();
 	?>

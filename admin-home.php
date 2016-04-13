@@ -1,11 +1,16 @@
 <?php
 	include_once "dbConnect.php";
 	include_once "layout.php";
+
 	
+	require_once "Includes/SessionAuth.php";
+	require_once "Includes/SessionAuthAdmin.php";	
+	
+
 	drawHeader("maksPage", "KS");
 
 
-	if($_SESSION['SESS_AUTH'] == 'admin'){
+	// if($_SESSION['SESS_AUTH'] == 'admin'){
 		 echo '
 		 	<div class="wrapper">
 		 			<div class="container">
@@ -45,10 +50,10 @@
 		 		</div><!--/.wrapper-->
 
 		 ';
-	}
-	else{
-		echo '<p>You not allowed</p>';
-	}
+	// }
+	// else{
+		// echo '<p>You not allowed</p>';
+	// }
 	
 	drawFooter();
 ?>
