@@ -25,30 +25,33 @@ function drawHeader($pageTitle,$user){
 						</a>
 
 					  	<a class="brand" href="index.html">
-					  		ISM mms
+					  		Marks Management Portal
 					  	</a>
 
 						<div class="nav-collapse collapse navbar-inverse-collapse">
 							<ul class="nav nav-icons">
-								<li class="active"><a href="#">
+								<li class="active"><a href=" ">
 									<i class="icon-envelope"></i>
 								</a></li>
-								<li><a href="#">
+								<li><a href=" ">
 									<i class="icon-eye-open"></i>
 								</a></li>
-								<li><a href="#">
+								<li><a href=" ">
 									<i class="icon-bar-chart"></i>
 								</a></li>
 							</ul>
 
-							<form class="navbar-search pull-left input-append" action="#">
-								<input type="text" class="span3">
-								<button class="btn" type="button">
-									<i class="icon-search"></i>
-								</button>
-							</form>
+							<!--
+								<form class="navbar-search pull-left input-append" action="#">
+									<input type="text" class="span3">
+									<button class="btn" type="button">
+										<i class="icon-search"></i>
+									</button>
+								</form>
+							-->
 						
 							<ul class="nav pull-right">
+								<!--
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 									<ul class="dropdown-menu">
@@ -60,20 +63,22 @@ function drawHeader($pageTitle,$user){
 										<li><a href="#">A Separated link</a></li>
 																	</ul>
 								</li>
-								
 								<li><a href="#">
 									Support
 								</a></li>
+								-->
+								
+								
 								<li class="nav-user dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 										<img src="images/user.png" class="nav-avatar" />
 										<b class="caret"></b>
 									</a>
 									<ul class="dropdown-menu">
-										<li><a href="#">Your Profile</a></li>
+										<!--<li><a href="#">Your Profile</a></li>
 										<li><a href="#">Edit Profile</a></li>
 										<li><a href="#">Account Settings</a></li>
-										<li class="divider"></li>
+										<li class="divider"></li>-->
 										<li><a href="logout.php">Logout</a></li>
 									</ul>
 								</li>
@@ -97,12 +102,14 @@ function drawAdminSidebar(){
 						Upload marks
 					</a>
 				</li>
+				<!--
 				<li>
 					<a href="activity.html">
 						<i class="menu-icon icon-bullhorn"></i>
 						View course structure
 					</a>
 				</li>
+				-->
 				<li>
 					<a href="message.html">
 						<i class="menu-icon icon-inbox"></i>
@@ -130,12 +137,14 @@ function drawStuSidebar(){
 						View marks
 					</a>
 				</li>
-				<li>
-					<a href="activity.html">
-						<i class="menu-icon icon-bullhorn"></i>
-						View course structure
-					</a>
-				</li>
+<!--
+<li>
+	<a href="activity.html">
+		<i class="menu-icon icon-bullhorn"></i>
+		View course structure
+	</a>
+</li>
+-->
 				<li>
 					<a href="stu-editdetails.php">
 						<i class="menu-icon icon-inbox"></i>
@@ -163,23 +172,25 @@ function drawProfSidebar(){
 
 			<ul class="widget widget-menu unstyled">
 				<li class="active">
-					<a href="indiv-marks-upload.php">
+					<a href="indiv-marks-upload-form.php">
 						<i class="menu-icon icon-paste"></i>
 						Upload individual marks
 					</a>
 				</li>
 				<li class="active">
-					<a href="class-marks-upload.php">
+					<a href="update-stu-marks-csv-action.php"> <!--class-marks-upload.php-->
 						<i class="menu-icon icon-paste"></i>
 						Upload csv marks
 					</a>
 				</li>
+				<!--
 				<li>
 					<a href="activity.html">
 						<i class="menu-icon icon-bullhorn"></i>
 						View course structure
 					</a>
 				</li>
+				-->
 				<li>
 					<a href="message.html">
 						<i class="menu-icon icon-inbox"></i>
@@ -196,11 +207,12 @@ function drawProfSidebar(){
 function drawFooter(){
 
 		echo '
+
 				<div class="footer">
 					<div class="container">
 						 
 
-						<b class="copyright">&copy; 2014 Edmin - EGrappler.com </b> All rights reserved.
+						<b class="copyright">&copy; 2016 Rashmi Kriti Amrit Bhavishya Hatim </b> All rights reserved.
 					</div>
 				</div>
 

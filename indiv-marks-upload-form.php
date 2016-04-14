@@ -8,9 +8,9 @@
 
 	drawHeader("maksPage", "KS");
 
-	$courseID = $_POST['course_id'];
-	$semester = $_POST['semester'];
-	$subjectID = $_POST['subject_id'];
+	// $courseID = $_POST['course_id'];
+	// $semester = $_POST['semester'];
+	// $subjectID = $_POST['subject_id'];
 
 	// $qry = "SELECT * FROM user WHERE id='$username' and password='$password' ";
 	// $result = mysql_query($qry);
@@ -46,33 +46,73 @@
 							<div class="module-head">
 								<h3>Upload Marks</h3>
 							</div>
-							<div class="module-body table">
-								<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
-									<thead>
-										<tr>
-											<th>Course ID</th>
-											<th>Semester</th>
-											<th>Subject ID</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="odd gradeX">
-											<td class="center">'.$courseID.'</td>
-											<td class="center">'.$semester.'</td>
-											<td class="center">'.$subjectID.'</td>
-										</tr>
-										</tfoot>
-								</table>
-							</div>
+							
 						</div><!--/.module-->
 						
 									<form class="form-horizontal row-fluid" action="update-stu-marks-action.php" method="post">
+										
+
+										                                        <div class="control-group">
+																					<label class="control-label" for="basicinput">Course ID</label>
+																					<div class="controls">
+																						<select tabindex="1" name="course_id" data-placeholder="Permanent" class="span8">
+																							<option value="">Select here..</option>
+																							<?php 
+																								  	$read_query = "SELECT * FROM course;";
+																									$read_ptr = mysql_query($read_query);
+
+																									while($read_list = mysql_fetch_assoc($read_ptr)){
+																										echo '<option value="'.$read_list['id'].'">'.$read_list['id'].'</option>';
+																									}
+																							 ?>
+																						</select>
+																					</div>
+																				</div>
+
+																				
+										                                        <div class="control-group">
+																					<label class="control-label" for="basicinput">Semester</label>
+																					<div class="controls">
+																						<select tabindex="1" name="semester" data-placeholder="Permanent" class="span8">
+																							<option value="">Select here..</option>
+
+
+																							<option value="1">1</option>
+																							<option value="2">2</option>
+										                                                    <option value="3">3</option>
+																							<option value="4">4</option>
+																							<option value="5">5</option>
+																							<option value="6">6</option>
+																							<option value="7">7</option>
+																							<option value="8">8</option>
+																						
+																						</select>
+																					</div>
+																				</div>
+										                                        
+										                                        
+										                                        <div class="control-group">
+																					<label class="control-label" for="basicinput">Subject ID</label>
+																					<div class="controls">
+																						<select tabindex="1" name="subject_id" data-placeholder="Permanent" class="span8">
+																							<option value="">Select here..</option>
+																							<?php 
+																								  	$read_query = "SELECT * FROM subject;";
+																									$read_ptr = mysql_query($read_query);
+
+																									while($read_list = mysql_fetch_assoc($read_ptr)){
+																										echo '<option value="'.$read_list['id'].'">'.$read_list['name'].'</option>';
+																									}
+																							 ?>
+																						</select>
+																					</div>
+																				</div>
+										                                        
+																				
+																				
 										<div class="control-group">
 
-										<input style="display: none;" type="text" id="basicinput" name="update_admn_no" placeholder="Enter Admission Number" class="span8">
-										<input type="text" id="basicinput" name="update_admn_no" placeholder="Enter Admission Number" class="span8">
-										<input type="text" id="basicinput" name="update_admn_no" placeholder="Enter Admission Number" class="span8">
-
+							
 										
 											<label class="control-label" for="basicinput">Admission Number</label>
 											<div class="controls">
@@ -97,7 +137,7 @@
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Class Performanace</label>
 											<div class="controls">
-												<input type="text" id="basicinput" name="update_class_performance" placeholder="Out of 10" class="span8">
+												<input type="number" id="basicinput" name="update_class_performance" placeholder="Out of 10" class="span8">
 											</div>
 										</div>
 										

@@ -1,0 +1,5 @@
+admn_no,course_id,subject_id,semester,mid_sem_marks,end_sem_marks,class_performance,total_marks,grade,status,grade_val
+2013JE0364,btechcse,ds,6,5,50,8,63,B,1,7
+2013JE0364,btechcse,elex,6,10,60,8,78,B+,1,8
+2013JE0364,btechcse,plc,6,15,50,6,71,B+,1,8
+2013JE0364,btechcse,comp,6,30,3,0,33,F,0,0

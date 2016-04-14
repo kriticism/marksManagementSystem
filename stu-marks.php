@@ -29,11 +29,11 @@
 								<table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
 									<thead>
 										<tr>
-											<th>subjjjject_id</th>
-											<th>semester</th>
-											<th>mid_sem_marks</th>
-											<th>end_sem_marks</th>
-											<th>grade</th>
+											<th>Subject ID</th>
+											<th>Semester</th>
+											<th>Mid-sem marks</th>
+											<th>End-sem marks</th>
+											<th>Grade</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -66,11 +66,11 @@
 									</tbody>
 									<tfoot>
 										<tr>
-											<th>subject_id</th>
-											<th>semester</th>
-											<th>mid_sem_marks</th>
-											<th>end_sem_marks</th>
-											<th>grade</th>
+											<th>Subject ID</th>
+											<th>Semester</th>
+											<th>Mid-sem marks</th>
+											<th>End-sem marks</th>
+											<th>Grade</th>
 										</tr>
 									</tfoot>
 								</table>

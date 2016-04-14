@@ -35,7 +35,7 @@
 	                                    <div class="docs-example">
 	                                        
 	                                        <h1>
-	                                            ISM MMS </h1>
+	                                            Marks Management Portal </h1>
 	                                    </div>
 	                                </section>
 	                       </div>

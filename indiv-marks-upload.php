@@ -38,9 +38,14 @@
 											<div class="controls">
 												<select tabindex="1" name="course_id" data-placeholder="Permanent" class="span8">
 													<option value="">Select here..</option>
-													<option value="btechcse">btechcse</option>
-													<option value="mtechcse">mtechcse</option>
-													<option value="intmtechcse">intmtechcse</option>
+													<?php 
+														  	$read_query = "SELECT * FROM course;";
+															$read_ptr = mysql_query($read_query);
+
+															while($read_list = mysql_fetch_assoc($read_ptr)){
+																echo '<option value="'.$read_list['id'].'">'.$read_list['id'].'</option>';
+															}
+													 ?>
 												</select>
 											</div>
 										</div>
@@ -51,6 +56,8 @@
 											<div class="controls">
 												<select tabindex="1" name="semester" data-placeholder="Permanent" class="span8">
 													<option value="">Select here..</option>
+
+
 													<option value="1">1</option>
 													<option value="2">2</option>
                                                     <option value="3">3</option>
@@ -70,8 +77,14 @@
 											<div class="controls">
 												<select tabindex="1" name="subject_id" data-placeholder="Permanent" class="span8">
 													<option value="">Select here..</option>
-													<option value="ada">ada</option>
-													<option value="dbms">dbms</option>
+													<?php 
+														  	$read_query = "SELECT * FROM subject;";
+															$read_ptr = mysql_query($read_query);
+
+															while($read_list = mysql_fetch_assoc($read_ptr)){
+																echo '<option value="'.$read_list['id'].'">'.$read_list['name'].'</option>';
+															}
+													 ?>
 												</select>
 											</div>
 										</div>
