@@ -2,6 +2,9 @@
 	include_once "dbConnect.php";
 	include_once "layout.php";
 	
+	require_once "Includes/SessionAuth.php";
+	require_once "Includes/SessionAuthStu.php";	
+	
 	drawHeader("maksPage", "KS");
 
 ?>
@@ -12,40 +15,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="span3">
-					<div class="sidebar">
-
-						<ul class="widget widget-menu unstyled">
-													<li class="active">
-														<a href="stu-marks.php">
-															<i class="menu-icon icon-dashboard"></i>
-															View marks
-														</a>
-													</li>
-													<li>
-														<a href="activity.html">
-															<i class="menu-icon icon-bullhorn"></i>
-															View course structure
-														</a>
-													</li>
-													<li>
-														<a href="message.html">
-															<i class="menu-icon icon-inbox"></i>
-															Edit details
-															<!-- <b class="label green pull-right">11</b> -->
-														</a>
-													</li>
-													
-													<li>
-														<a href="task.html">
-															<i class="menu-icon icon-tasks"></i>
-															View GPA
-															<!-- <b class="label orange pull-right">19</b> -->
-														</a>
-													</li>
-												</ul><!--/.widget-nav-->
-
-
-					</div><!--/.sidebar-->
+					<?php 
+						drawStuSidebar();
+					 ?>
 				</div><!--/.span3-->
 
 
@@ -157,7 +129,7 @@
 											<div class="controls">
 											<?php
 											echo '
-											<input type="text" id="basicinput" value="'.$read_list['mobile_n'].'" placeholder="phone num" class="span8">
+											<input type="text" id="basicinput" value="'.$read_list['mobile_no'].'" placeholder="phone num" class="span8">
 											';?>
 
 												
@@ -170,7 +142,7 @@
 											<div class="controls">
 											<?php
 											echo '
-											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="stu mail" class="span8">
+											<input type="text" id="basicinput" value="'.$read_list['email_id'].'" placeholder="stu mail" class="span8">
 											';?>
 												
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
@@ -182,7 +154,7 @@
 											<div class="controls">
 											<?php
 											echo '
-											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="addr line 1" class="span8">
+											<input type="text" id="basicinput" value="'.$read_list['permanent_addr_1'].'" placeholder="addr line 1" class="span8">
 										
 											';?>
 												
@@ -196,7 +168,7 @@
 											<?php
 											echo '
 
-											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="addr line 2" class="span8">
+											<input type="text" id="basicinput" value="'.$read_list['permanent_addr_2'].'" placeholder="addr line 2" class="span8">
 											';?>
 												
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
@@ -208,7 +180,7 @@
 											<div class="controls">
 												<?php
 												echo '
-												<input type="text" id="basicinput"  value="'.$read_list['admn_no'].'" placeholder="City" class="span8">
+												<input type="text" id="basicinput"  value="'.$read_list['city'].'" placeholder="City" class="span8">
 
 												';?>
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
@@ -220,14 +192,14 @@
 											<div class="controls">
 											<?php
 											echo '
-											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="state" class="span8">
+											<input type="text" id="basicinput" value="'.$read_list['state'].'" placeholder="state" class="span8">
 											';?>
 												
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
 											</div>
 										</div>
                                         
-                                        <div class="control-group">
+                                        <!-- <div class="control-group">
 											<label class="control-label" for="basicinput">Degree</label>
 											<div class="controls">
 											<?php
@@ -244,9 +216,10 @@
 											<label class="control-label" for="basicinput">Branch</label>
 											<div class="controls">
 											<?php
-											echo '
-											<input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="branch" class="span8" disabled>
-											';?>
+											// echo '
+											// <input type="text" id="basicinput" value="'.$read_list['admn_no'].'" placeholder="branch" class="span8" disabled>
+											//';
+											?>
 												
 											</div>
 										</div>
@@ -255,20 +228,26 @@
 											<label class="control-label" for="basicinput">Semester</label>
 											<div class="controls">
 											<?php
-											echo '
-												<input type="text" id="basicinput" placeholder="current sem"  value="'.$read_list['admn_no'].'"  class="span8" disabled>
-											';?>
+											//echo '
+											//	<input type="text" id="basicinput" placeholder="current sem"  //value="'.$read_list['admn_no'].'"  class="span8" disabled>
+											//';
+											?>
 
 
 											</div>
 										</div>
                                         
-                                        
+                                        -->
                                         
                                          <div class="control-group">
 											<label class="control-label" for="basicinput">Father's Name</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="father's name" class="span8">
+											<?php
+											echo '
+											<input type="text" id="basicinput" value="'.$read_list['father_name'].'" placeholder="father\'s name" class="span8">
+
+											';?>
+												
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
 											</div>
 										</div>
@@ -276,7 +255,11 @@
                                     <div class="control-group">
 											<label class="control-label" for="basicinput">Mother's Name</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="mother's name" class="span8">
+											<?php
+											echo '
+												<input type="text" id="basicinput" value="'.$read_list['mother_name'].'" placeholder="mother\'s name" class="span8">
+
+											';?>
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
 											</div>
 										</div>
@@ -284,18 +267,30 @@
                                     <div class="control-group">
 											<label class="control-label" for="basicinput">Parent's Phone Number</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="parents phn num" class="span8">
+											<?php
+											echo '
+												<input type="text" id="basicinput" value="'.$read_list['parent_mobile_number'].'" placeholder="parents phn num" class="span8">
+
+											';?>
+
 												<!--<span class="help-inline">Minimum 5 Characters</span>-->
 											</div>
 										</div>
 									
+                                        <!-- 
                                         <div class="control-group">
 											<label class="control-label" for="basicinput">Parent's Email ID</label>
 											<div class="controls">
-												<input type="text" id="basicinput" placeholder="abc@gmail.com" class="span8">
-												<!--<span class="help-inline">Minimum 5 Characters</span>-->
+											<?php
+											// echo '
+											// <input type="text" id="basicinput" value="'.$read_list['mobile_no'].'" placeholder="abc@gmail.com" class="span8">
+											// ';
+											?>
+												
+												<span class="help-inline">Minimum 5 Characters</span>
 											</div>
-										</div>									
+										</div>	
+                                         -->
                                         
 										<div class="control-group">
 											<div class="controls">

@@ -1,7 +1,8 @@
 ﻿<?php
 	include_once "dbConnect.php";
 	include_once "layout.php";
-	
+	require_once "Includes/SessionAuth.php";
+	require_once "Includes/SessionAuthStu.php";	
 	drawHeader("View Marks", "KS");
 
 ?>
@@ -38,8 +39,11 @@
 									<tbody>
 
 										<?php 
+											
+											$admn_no_queried_for = $_SESSION['user'];
 
-									  	$read_query = "SELECT * FROM marks WHERE admn_no = '2013JE0364' ORDER BY semester ASC;";
+
+									  	$read_query = "SELECT * FROM marks WHERE admn_no = '".$admn_no_queried_for."' ORDER BY semester ASC;";
 										$read_ptr = mysql_query($read_query);
 
 										while($read_list = mysql_fetch_assoc($read_ptr)){

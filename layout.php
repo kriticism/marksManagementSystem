@@ -145,7 +145,7 @@ function drawStuSidebar(){
 				</li>
 				
 				<li>
-					<a href="task.html">
+					<a href="stu-gpa-enter.php">
 						<i class="menu-icon icon-tasks"></i>
 						View GPA
 						<!-- <b class="label orange pull-right">19</b> -->
@@ -163,9 +163,15 @@ function drawProfSidebar(){
 
 			<ul class="widget widget-menu unstyled">
 				<li class="active">
-					<a href="index.html">
+					<a href="indiv-marks-upload.php">
 						<i class="menu-icon icon-paste"></i>
-						Upload marks
+						Upload individual marks
+					</a>
+				</li>
+				<li class="active">
+					<a href="class-marks-upload.php">
+						<i class="menu-icon icon-paste"></i>
+						Upload csv marks
 					</a>
 				</li>
 				<li>
